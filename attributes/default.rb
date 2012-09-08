@@ -29,6 +29,10 @@ default['ruby_build']['default_ruby_base_path'] = "/usr/local/ruby"
 # ruby-build upgrade action
 default['ruby_build']['upgrade'] = "none"
 
+default['ruby_build']['environment'] = {
+  'CONFIGURE_OPTS' => '--disable-install-doc'
+}
+
 case platform
 when "redhat", "centos", "fedora", "amazon", "scientific"
   node.set['ruby_build']['install_pkgs'] = %w{ tar bash curl git }
